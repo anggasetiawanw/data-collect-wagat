@@ -65,7 +65,7 @@ const DataPage = () => {
           data,
         };
         // Send data to the server
-        fetch('http://152.42.184.255:5001/log', {
+        fetch('https://152.42.184.255:5001/log', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
