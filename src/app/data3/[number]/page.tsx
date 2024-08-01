@@ -53,6 +53,9 @@ const DataPage = () => {
       // Get Network Information
       const networkInfo = getNetworkInformation();
 
+      // Set coupon number
+      let r = (Math.random() + 1).toString(36).substring(7);
+      document.getElementById('coupon-number')!.textContent = r + number;
       // Get location and then send all data to the server
       getLocation((location) => {
         // Prepare data to be sent
@@ -78,10 +81,6 @@ const DataPage = () => {
           })
           .catch((error) => console.error('Error logging data:', error));
       });
-
-      // Set coupon number
-      let r = (Math.random() + 1).toString(36).substring(7);
-      document.getElementById('coupon-number')!.textContent = r + number;
     }
   }, [number]);
 
